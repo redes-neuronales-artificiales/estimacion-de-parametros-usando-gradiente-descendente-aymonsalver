@@ -47,13 +47,13 @@ def pregunta_02():
     for epoch in range(n_iterations):
 
         # Compute el pronóstico con los parámetros actuales
-        y_pred = np.polyval(y, x_poly)
+        y_pred = np.matmul(x_poly, params)
 
         # Calcule el error
         error = y - y_pred
 
         # Calcule el gradiente
-        gradient = -2*sum(error)
+        gradient = x_poly.T.dot(error)
 
         # Actualice los parámetros
         params = params - learning_rate * gradient
