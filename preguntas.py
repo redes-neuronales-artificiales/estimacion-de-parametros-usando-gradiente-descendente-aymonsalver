@@ -8,9 +8,6 @@ polinomial de grado `n`.
 """
 
 
-from math import degrees
-
-
 def pregunta_01():
     """
     Complete el código presentado a continuación.
@@ -47,16 +44,16 @@ def pregunta_02():
 
     # Defina el parámetro inicial `params` como un arreglo de tamaño 3 con ceros
     params = np.zeros(x_poly.shape[1])
-    for epochs in range(n_iterations):
+    for epoch in range(n_iterations):
 
         # Compute el pronóstico con los parámetros actuales
         y_pred = np.polyval(y, x_poly)
 
         # Calcule el error
-        error = y_pred - y
+        error = y - y_pred
 
         # Calcule el gradiente
-        gradient = 2*y
+        gradient = -2*sum(error)
 
         # Actualice los parámetros
         params = params - learning_rate * gradient
