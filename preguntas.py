@@ -1,5 +1,4 @@
 """
-123456
 Optimización usando gradiente descendente - Regresión polinomial
 -----------------------------------------------------------------------------------------
 
